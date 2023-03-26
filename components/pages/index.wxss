@@ -1,0 +1,32 @@
+.pages {
+    text-align: center;
+    padding: 20rpx 0;
+}
+.pages text {
+    display: inline-block;
+    background: #ffffff;
+    padding: 12rpx 30rpx;
+    font-size: 30rpx;
+    margin: 0 20rpx;
+    border-radius: 10rpx;
+    color: #666;
+}
+.pages text:active {
+    background: #04babe;
+    color: #fff;
+}
+.pages .form-block {
+    background-color: #fff;
+    padding: 30rpx 100rpx 30rpx 100rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+}
+
+.pages .form-label {
+    margin: 0;
+    padding: 24rpx 0 24rpx;
+    color: #333;
+    font-weight: normal;
+    font-size: 28rpx;
+    line-height: 32rpx;
+}

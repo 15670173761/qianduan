@@ -1,0 +1,4 @@
+<view class="qrcode" wx:if="{{qrcode}}">
+    <image src="{{qrcode}}" bindlongpress="saveImage"></image>
+    <view class="title">使用微信扫一扫打开</view>
+</view>

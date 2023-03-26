@@ -1,0 +1,65 @@
+<view>
+    <view class="no-order" wx:if="{{is_check === 1}}">
+        <image src="/images/commission/no-order.png" class="no-order-img"></image>
+        <view class="text">暂未上线</view>
+    </view>
+    <view class="container" wx:if="{{is_check === 0}}">
+        <view class="box-input">
+            <view class="title">提现金额</view>
+            <view class="money"><text class="unit">￥</text>{{ money }}</view>
+        </view>
+        <view class="box-type">
+            <view class="title">
+                <view class="icon"></view>
+                <text>提现方式</text>
+            </view>
+            <view class="type-list" style="height: auto">
+                <view class="type-item" bindtap="bankChange" data-type="{{word_lingqian}}">
+                    <view class="row-label">
+                        <image class="checkbox-img" src="/images/commission/wxpay.png"></image>
+                        提现到{{word_weixin}}
+                    </view>
+                    <image wx:if="{{bank_name==word_lingqian}}" class="checkbox-img" src="/images/commission/ic_check_red.png"></image>
+                    <image wx:else class="checkbox-img" src="/images/commission/ic_check_gray.png"></image>
+                </view>
+                <view class="type-item" bindtap="bankChange" data-type="{{word_zfb}}">
+                    <view class="row-label">
+                        <image class="checkbox-img" src="/images/commission/alipay.png"></image>
+                        提现到{{word_zfb}}
+                    </view>
+                    <image wx:if="{{bank_name==word_zfb}}" class="checkbox-img" src="/images/commission/ic_check_red.png"></image>
+                    <image wx:else class="checkbox-img" src="/images/commission/ic_check_gray.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="box-form">
+            <view class="form-group">
+                <view class="title">户名</view>
+                <input placeholder="请输入姓名" model:value="{{account_name}}" />
+            </view>
+            <view class="form-group" wx:if="{{bank_name == word_zfb}}">
+                <view class="title">账号</view>
+                <input placeholder="请输入{{word_zfb}}账号" model:value="{{account_number}}" />
+            </view>
+            <view class="form-group" wx:if="{{bank_name == word_lingqian}}">
+                <view class="title">上传{{word_skm}}</view>
+                <view class="upload">
+                    <view class="image" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="viewImage" data-url="{{imgList[index]}}">
+                        <image class="img" src='{{imgList[index]}}' mode='aspectFill'></image>
+                        <view class="del" catchtap="delImg" data-index="{{index}}">
+                            <image class="icon" src="/images/commission/ic_upload_del.png"></image>
+                        </view>
+                    </view>
+                    <view class="btn-upload" wx:if="{{!imgList || imgList.length == 0}}">
+                        <image src="/images/commission/ic_upload_add.png" class="icon" bindtap="chooseImage"></image>
+                    </view>
+                    <view style="clear: both;"></view>
+                </view>
+            </view>
+        </view>
+        
+        <view wx:if="{{money > 0}}" class="btn-submit" bindtap="withdraw">提交申请</view>
+        <view wx:else class="btn-submit disabled">提交申请</view>
+        
+    </view>
+</view>

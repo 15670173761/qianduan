@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="no-order" wx:if="{{!orderList || orderList.length == 0}}">
+        <image src="/images/commission/no-order.png" class="no-order-img"></image>
+        <view class="text">没有记录</view>
+    </view>
+    <view class="wrap" wx:else>
+        <view class="box-order" wx:for="{{orderList}}">
+            <view class="order-header">
+                <view class="user">
+                    <image src="{{item.avatar}}"></image>
+                    <text>{{ item.nickname }}</text>
+                </view>
+                <view class="status">
+                    <view class="pay-status">
+                        <text>已付款</text>
+                    </view>
+                </view>
+            </view>
+
+            <view class="order-info">
+                <view class="row">
+                    <view class="label">订单编号：</view>
+                    <view class="content">{{ item.out_trade_no }}</view>
+                </view>
+                <view v-if="item.status > 0" class="row">
+                    <view class="label">付款时间：</view>
+                    <view class="content">{{ item.pay_time }}</view>
+                </view>
+                <view class="row">
+                    <view class="label">订单金额：</view>
+                    <view class="content">￥{{ item.total_fee }}</view>
+                </view>
+                <view class="row">
+                    <view class="label">推荐人：</view>
+                    <view class="content">
+                        <view class="user" wx:if="{{item.commission1}}">
+                            <image src="{{item.commission1.avatar}}"></image>
+                            <text>{{ item.commission1.nickname }}</text>
+                            <text class="fee">（佣金￥{{ item.commission1.fee }}）</text>
+                        </view>
+                        <view class="user" wx:if="{{item.commission2}}" style="margin-top: 10rpx;">
+                            <image src="{{item.commission2.avatar}}"></image>
+                            <text>{{ item.commission2.nickname }}</text>
+                            <text class="fee">（佣金￥{{ item.commission2.fee }}）</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{noMore}}" class="no-more-order">没有更多了~</view>
+    </view>
+</view>

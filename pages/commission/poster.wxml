@@ -1,0 +1,14 @@
+<view class="page">
+    <swiper class="poster-list" bindchange="swiperChange" previous-margin="125rpx" next-margin="125rpx">
+        <swiper-item class="item" wx:for="{{posterList}}">
+            <view class="poster" style="{{index === current ? 'transform: scale(1)':'transform: scale(0.8)'}}">
+                <image src="{{item.img}}" style="width: 100%; height: 100%;"></image>
+                <image src="{{qrcode}}" style="left: {{item.hole.x}}rpx; top: {{item.hole.y}}rpx; width: {{item.hole.w}}rpx; height:{{item.hole.h}}rpx;"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+    
+    <canvas canvasId="poster" style="display:block; height: 750px; width: 500px; position: absolute; left: -500px; top: -750px;"></canvas>
+    
+    <view class="btn-save" wx:if="{{posterList.length > 0}}" bindtap="saveImage">保存到相册</view>
+</view>

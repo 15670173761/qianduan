@@ -1,0 +1,54 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/user/index",
+        "pages/user/feedback",
+        "pages/user/about",
+        "pages/user/nickname",
+        "pages/pay/vip",
+        "pages/task/index",
+        "pages/webview/webview",
+        "pages/commission/index",
+        "pages/commission/agreement",
+        "pages/commission/bill",
+        "pages/commission/apply",
+        "pages/commission/member/index",
+        "pages/commission/member/tuser",
+        "pages/commission/member/invite",
+        "pages/commission/poster",
+        "pages/commission/withdraw/index",
+        "pages/commission/withdraw/list",
+        "pages/commission/order/index"
+    ],
+    "window": {
+        "navigationBarTitleText": "AI机器人",
+        "navigationBarBackgroundColor": "#04BABE",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#666666",
+        "selectedColor": "#04BABE",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "对话",
+                "iconPath": "images/tabbar/ic_chat.png",
+                "selectedIconPath": "images/tabbar/ic_chat_active.png"
+            },
+            {
+                "pagePath": "pages/task/index",
+                "text": "任务",
+                "iconPath": "images/tabbar/ic_task.png",
+                "selectedIconPath": "images/tabbar/ic_task_active.png"
+            },
+            {
+                "pagePath": "pages/user/index",
+                "text": "我的",
+                "iconPath": "images/tabbar/ic_user.png",
+                "selectedIconPath": "images/tabbar/ic_user_active.png"
+            }
+        ]
+    }
+}

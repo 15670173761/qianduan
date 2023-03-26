@@ -1,0 +1,88 @@
+    <view>
+        <!-- <loading v-if="!show">加载中...</loading> -->
+        <view class="page commission">
+            <view class="user-info">
+                <view class="fui-list">
+                    <view class="fui-list-media">
+                        <image src="{{member['avatar']}}" wx:if="{{member['avatar']}}"></image>
+                        <image src="/images/avatar.png" wx:else></image>
+                    </view>
+                    <view class="fui-list-inner">
+                        <view class="title">{{ member['nickname'] ? member['nickname'] : '无昵称' }}</view>
+                        <!-- <view class="text" v-if="member['commission_puser']">推荐人：{{ member['commission_puser'] }}</view> -->
+                        <view class="subtitle">{{ member['commission_title'] }}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="userblock">
+                <view class="line able">
+                    <view class="text">
+                        <view class="num">{{ commission['money'] }}</view>
+                        <view class="title">可提现佣金(元)</view>
+                    </view>
+                    <view class="btn btn-warning pull-right" bindtap="toWithdraw" >申请提现</view>
+                </view>
+				<view class="fui-cell-group" style="margin-top:2rpx;">
+				    <navigator class="fui-cell" url="/pages/commission/withdraw/list" style="padding: 16rpx 24rpx; background: #eefdfd;">
+				        <image class="icon" src="/images/commission/ic_withdraw.png"></image>
+				        <view class="fui-cell-text" style="color:#777; font-size: 24rpx;">提现记录</view>
+						<image class="icon-r" src="/images/ic_arrow_r.png"></image>
+				    </navigator>
+				</view>
+            </view>
+            <view class="fui-block-group">
+                <navigator class="fui-block-child" url="/pages/commission/bill">
+                    <view class="icon" style="color: #ff4357">
+                        <image src="/images/commission/ic_wallet.png"></image>
+                    </view>
+                    <view class="text">
+                        <view class="title">佣金明细</view>
+                        <text>{{ commission['total'] }}</text>
+                        元
+                    </view>
+                </navigator>
+                <navigator class="fui-block-child" url="/pages/commission/member/index" v-if="member.commission_pid == 0">
+                    <view class="icon" style="color: #ff6e02">
+                        <image src="/images/commission/ic_invite.png"></image>
+                    </view>
+                    <view class="text">
+                        <view class="title">下级分销商</view>
+                        <text>{{ commission['member_count'] }}</text>
+                        人
+                    </view>
+                </navigator>
+                <navigator class="fui-block-child" url="/pages/commission/member/tuser">
+                    <view class="icon" style="color: #9ec9f4">
+                        <image src="/images/commission/ic_member.png"></image>
+                    </view>
+                    <view class="text">
+                        <view class="title">推广的用户</view>
+                        <text>{{ commission['tuser_count'] }}</text>
+                        人
+                    </view>
+                </navigator>
+                <navigator class="fui-block-child" url="/pages/commission/order/index">
+                    <view class="icon" style="color: #9ec9f4">
+                        <image src="/images/commission/ic_order.png"></image>
+                    </view>
+                    <view class="text">
+                        <view class="title">分销订单</view>
+                        <text>{{ commission['order_count'] }}</text>
+                        笔
+                    </view>
+                </navigator>
+            </view>
+            <view class="fui-cell-group" style="border-radius: 10rpx;">
+                <navigator class="fui-cell" url="/pages/commission/member/invite" v-if="member.commission_pid == 0">
+                    <image class="icon" src="/images/commission/ic_invite.png"></image>
+                    <view class="fui-cell-text">邀请下级分销商</view>
+					<image class="icon-r" src="/images/ic_arrow_r.png"></image>
+                </navigator>
+                <navigator class="fui-cell" bindtap="toShare">
+                    <image class="icon" src="/images/commission/ic_haibao.png"></image>
+                    <view class="fui-cell-text">推广新用户</view>
+					<image class="icon-r" src="/images/ic_arrow_r.png"></image>
+                </navigator>
+            </view>
+        </view>
+    </view>

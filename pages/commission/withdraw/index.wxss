@@ -1,0 +1,184 @@
+page {
+    background-color: #F7F7F7;
+}
+.container {
+	padding: 30rpx;
+	color: #666;
+}
+.box-input {
+	background-color: #fff;
+	margin-bottom: 24rpx;
+	padding: 30rpx;
+	border-radius: 10rpx;
+}
+.box-input .title {
+	font-size: 32rpx;
+	margin-bottom: 10rpx;
+}
+.box-input .money .unit {
+	font-size: 32rpx;
+	margin-right: 10rpx;
+}
+.box-input .money {
+	font-size: 44rpx;
+	font-weight: bold;
+	color: #04babe
+}
+.box-type {
+	background-color: #fff;
+	border-radius: 10rpx;
+	padding: 0 30rpx;
+	margin-bottom: 24rpx;
+}
+.box-type .title {
+	height: 80rpx;
+	line-height: 80rpx;
+	border-bottom: 1px solid #f2f2f2;
+	display: flex;
+	align-items: center;
+}
+.box-type .title .icon {
+	width: 6rpx;
+	height: 32rpx;
+	background-color: #04babe;
+	border-radius: 6rpx;
+	margin-right: 16rpx;
+}
+
+.box-type .type-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 80rpx;
+	line-height: 60rpx;
+	padding: 10rpx 30rpx 10rpx 0;
+	border-bottom: 1px solid #f6f6f6;
+}
+.box-type .type-item .row-label {
+    height: 40rpx;
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #666;
+    display: flex;
+	align-items: center;
+}
+.box-type .type-item .row-label image {
+    width: 64rpx;
+    height: 64rpx;
+	margin-right: 10rpx;
+}
+.box-type .type-item .checkbox-img {
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.box-form {
+	background-color: #fff;
+	border-radius: 10rpx;
+	padding: 20rpx 30rpx;
+}
+.box-form .form-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #f6f6f6;
+	padding: 16rpx 0;
+	font-size: 30rpx;
+}
+.box-form .form-group:last-child {
+	border-bottom: none;
+}
+.box-form .form-group input {
+	text-align: right;
+}
+.btn-submit {
+    width: 600rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    background: #04babe;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 100rpx auto 30rpx auto;
+}
+.btn-submit.disabled {
+	background: #ddd;
+}
+
+
+
+.upload .image {
+    width: 116rpx;
+    height: 116rpx;
+    float: left;
+    margin-right: 16rpx;
+    position: relative;
+    margin-bottom: 16rpx;
+}
+.upload .image .img {
+    width: 100%;
+    height: 100%;
+    background-color: #dedede;
+}
+.upload .image .del {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 6rpx;
+    padding: 2rpx 8rpx;
+    width: 32rpx;
+    height: 32rpx;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+.upload .image .del .icon {
+    width: 100%;
+    height: 100%;
+}
+
+.upload .btn-upload {
+    width: 116rpx;
+    height: 116rpx;
+    border-radius: 6rpx;
+    margin-bottom: 16rpx;
+    position: relative;
+    overflow: hidden;
+    border: 1px dashed #ccc;
+    border-radius: 6rpx;
+    background: #fafbfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.upload .btn-upload .icon {
+    width: 100%;
+    height: 100%;
+}
+
+.no-order {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	top: 88rpx;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding-top: 203rpx;
+	display: block;
+}
+
+.no-order-img {
+	width: 100rpx;
+	height: 100rpx;
+	margin-bottom: 30rpx;
+}
+
+.no-order .text {
+	font-size: 30rpx;
+	color: #999;
+	text-align: center;
+	margin-bottom: 30rpx;
+}

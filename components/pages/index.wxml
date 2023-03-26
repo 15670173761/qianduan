@@ -1,0 +1,5 @@
+<view class="pages">
+    <text class="prev" bindtap="doPrev">上页</text>
+    <text class="current" bindtap="showPageInput">{{page}} / {{pageMax}}</text>
+    <text class="next" bindtap="doNext">下页</text>
+</view>

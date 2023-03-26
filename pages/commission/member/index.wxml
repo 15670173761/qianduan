@@ -1,0 +1,28 @@
+<view>
+    <view class="no-order" wx:if="{{!list || list.length == 0}}">
+        <image src="/images/commission/no-order.png" class="no-order-img"></image>
+        <view class="text">没有记录</view>
+    </view>
+    <view class="page navbar com-down" wx:else>
+        <view class="fui-list-group">
+            <view class="fui-list" wx:for="{{list}}">
+                <view class="fui-list-media">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+
+                <view class="fui-list-inner">
+                    <view class="row">
+                        <view class="row-text">
+                            {{ item.nickname || '无昵称' }}
+                        </view>
+                    </view>
+                    <view class="subtitle">加入时间: {{ item.commission_time }}</view>
+                </view>
+                <view class="row-remark">
+                    <view>已推{{ item.order_count }}笔订单</view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{noMore}}" class="no-more">没有更多了~</view>
+    </view>
+</view>

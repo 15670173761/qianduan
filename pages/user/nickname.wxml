@@ -1,0 +1,12 @@
+<view class="page">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image class="avatar" src="{{avatar}}"></image>
+    </button>
+    <view class="form-input">
+        <view class="label">昵称</view>
+        <input type="nickname" class="input" model:value="{{nickname}}" placeholder="请输入昵称"/>
+    </view>
+    <view>
+        <button class="btn-submit" bindtap="saveUserInfo">确 定</button>
+    </view>
+</view>

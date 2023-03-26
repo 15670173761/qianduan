@@ -1,0 +1,41 @@
+page {
+	background: #f7f7f7;
+}
+.page {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.poster-list {
+	width:100%;
+	height: 750rpx;
+	margin-top: 100rpx;
+}
+.poster-list .item {
+	width: 500rpx;
+	height: 750rpx;
+}
+.poster {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transition: transform 0.4s linear 0s;
+}
+.poster image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.btn-save {
+    width: 500rpx;
+	margin: 160rpx auto 40rpx auto;
+	font-size: 32rpx;
+	font-weight: 500;
+	color: #ffffff;
+	text-align: center;
+	background-image: linear-gradient(to right, #FF5E41, #fc4353);
+	height: 80rpx;
+	line-height: 80rpx;
+	border-radius: 80rpx;
+	box-shadow: 0 0 20rpx rgba(252, 67, 83, 0.3);
+}

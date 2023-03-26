@@ -1,0 +1,46 @@
+<view class="container">
+    <view class="no-order" wx:if="{{list.length <= 0}}">
+        <image src="/images/commission/no-order.png" class="no-order-img"></image>
+        <view class="text">没有记录</view>
+    </view>
+    <view wx:else class="wrap">
+        <view class="box-order" wx:for="{{list}}">
+            <view class="order-header">
+                <view class="user"><text>{{ item.create_time }}</text></view>
+                <view class="status">
+                    <view class="pay-status">
+                        <text class="text-blue" wx:if="{{item.status == 0}}">审核中</text>
+                        <text class="text-green" wx:if="{{item.status == 1}}">已完成</text>
+                        <text class="text-red" wx:if="{{item.status == 2}}">被驳回</text>
+                    </view>
+                </view>
+            </view>
+
+            <view class="order-info">
+                <view class="row">
+                    <view class="label">提现方式：</view>
+                    <view class="content">{{ item.bank_name }}</view>
+                </view>
+                <view class="row">
+                    <view class="label">户名：</view>
+                    <view class="content">{{ item.account_name }}</view>
+                </view>
+                <view class="row" wx:if="{{item.bank_name != '微信零钱'}}">
+                    <view class="label">账号：</view>
+                    <view class="content">{{ item.account_number }}</view>
+                </view>
+                <view class="row">
+                    <view class="label">提现金额：</view>
+                    <view class="content">￥{{ item.money }}</view>
+                </view>
+                <view class="row text-red" wx:if="{{item.status == 2 && item.reject_reason}}">
+                    <view class="label">驳回原因：</view>
+                    <view class="content">
+                        {{ item.reject_reason }}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{noMore}}" class="no-more-order">没有更多了~</view>
+    </view>
+</view>

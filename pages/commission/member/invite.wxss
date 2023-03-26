@@ -1,0 +1,26 @@
+page {
+	background: #f7f7f7;
+}
+.page {
+	width: 100%;
+}
+.qrcode{
+	padding-top: 100rpx;
+}
+.qrcode image {
+	width: 440rpx;
+	height: 440rpx;
+	margin: 0 155rpx;
+	box-shadow: 0 0 30rpx rgba(0, 0, 0, 0.05);
+	border-radius: 0;
+	padding: 30rpx;
+	background: #fff;
+	box-sizing: border-box;
+}
+.qrcode .title {
+	line-height: 200rpx;
+	text-align: center;
+	color: #555;
+	letter-spacing: 4rpx;
+	font-size: 34rpx;
+}
